@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo 4</title>
+    
+</head>
+<body>
+    <input type="number" id="senhaInput" placeholder="Digite a senha">
+    <button onclick="verificarSenha()">Verificar</button>
+    <p id="mensagem"></p>
+    
+    <script>
+        var senha = 123456;
+        var tentativas = 0;
+        var maxTentativas = 3;
+        
+        function verificarSenha() {
+            var teste = Number(document.getElementById('senhaInput').value);
+            tentativas++;
+            
+            if (teste === senha) {
+                document.getElementById('mensagem').textContent = "O arquivo pode ser aberto!";
+            } else if (tentativas >= maxTentativas) {
+                document.getElementById('mensagem').textContent = "Suas tentativas acabaram.";
+            } else {
+                document.getElementById('mensagem').textContent = "Já foram " + tentativas + " tentativas.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+    
